@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "hesabal"
+  "defaultProject": "hesabal",
+  "cli": {
+    "analytics": "c1c0efa7-2863-4949-95ed-34967e92f70f"
+  }
 }
