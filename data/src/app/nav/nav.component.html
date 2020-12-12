@@ -4,21 +4,13 @@
       <input type="text"  class="form-control">
       <div class="input-group-append">
         <select class="form-control form-controlmain">
-          <option>kateqoriya</option>
-          <option>kateqoriyakateqoriyakateqoriya</option>
-          <option>kateqoriya</option>
-          <option>kateqoriya</option>
-          <option>kateqoriya</option>
-        </select>  
+          <option *ngFor="let category of categories">{{category.name}}</option>
+        </select>
         <select class="form-control form-controlmain">
-          <option>kateqoriya</option>
-          <option>kateqoriya</option>
-          <option>kateqoriya</option>
-          <option>kateqoriya</option>
-          <option>kateqoriya</option>
-        </select>      
+          <option *ngFor="let category of categories">{{category.name}}</option>
+        </select>
         <button class="btn btn-danger"> Axtar</button>
-        
+
       </div>
     </div>
   </div>
