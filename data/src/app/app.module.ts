@@ -9,6 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { KateqoriyaComponent } from './kateqoriya/kateqoriya.component';
 import { CardComponent } from './card/card.component';
 
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,8 @@ import { CardComponent } from './card/card.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

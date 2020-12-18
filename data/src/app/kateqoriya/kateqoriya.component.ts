@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KateqoriyaComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
 
-  ngOnInit(): void {
+  }
+  showbox:boolean=true
+  ngOnInit(): void { }
+  data(){
+    if(this.showbox==true){
+      this.showbox=false
+    }else{
+      this.showbox=true
+    }
   }
 
+  
+  
 }

@@ -9,7 +9,15 @@ export class CardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  showbox:boolean=true
+  ngOnInit(): void { }
+  data(){
+    if(this.showbox==true){
+      this.showbox=false
+    }else{
+      this.showbox=true
+    }
   }
+
 
 }
