@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {DictionaryService} from '../services/dictionary.service';
 
-class Category {
+export class Category {
   id: number | undefined;
   name: string | undefined;
 }
@@ -16,10 +16,12 @@ export class NavComponent implements OnInit {
 
   categories: any;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private dictionaryService: DictionaryService) {
   }
 
   ngOnInit(): void {
+    // this.categories = this.dictionaryService.getCategory();
+    // console.log('Categories:' + this.categories);
     this.http.get<Category[]>('https://sell-social-dev.herokuapp.com/api/v1/categories')
       .subscribe((data: Category[]) => {
         this.categories = data;

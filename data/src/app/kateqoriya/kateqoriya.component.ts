@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Category} from '../nav/nav.component';
+import {HttpClient} from '@angular/common/http';
+import {DictionaryService} from '../services/dictionary.service';
 
 @Component({
   selector: 'app-kateqoriya',
@@ -6,20 +9,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./kateqoriya.component.css']
 })
 export class KateqoriyaComponent implements OnInit {
+  categories: any;
 
-  constructor() {
+  showbox: boolean = true;
 
+  constructor(private http: HttpClient) {
   }
-  showbox:boolean=true
-  ngOnInit(): void { }
-  data(){
-    if(this.showbox==true){
-      this.showbox=false
-    }else{
-      this.showbox=true
+
+  ngOnInit(): void {
+    this.http.get<Category[]>('https://sell-social-dev.herokuapp.com/api/v1/categories')
+      .subscribe((data: Category[]) => {
+        this.categories = data;
+      }, (err) => {
+        console.log(err);
+      });
+  }
+
+  data() {
+    if (this.showbox == true) {
+      this.showbox = false;
+    } else {
+      this.showbox = true;
     }
   }
 
-  
-  
 }
